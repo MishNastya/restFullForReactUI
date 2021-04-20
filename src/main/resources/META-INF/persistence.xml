@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="hr_department" transaction-type="JTA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>java:jboss/datasources/hr_department</jta-data-source>
+        <class>com.shatalova.hr_department.entity.Organization</class>
+        <class>com.shatalova.hr_department.entity.Employee</class>
+        <class>com.shatalova.hr_department.entity.Subdivision</class>
+        <class>com.shatalova.hr_department.entity.Position</class>
+
+
+    <properties>
+        <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost;DatabaseName=hr_department"/>
+        <property name="javax.persistence.jdbc.user" value="sa"/>
+        <property name="javax.persistence.jdbc.password" value="magenta"/>
+        <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
+        <property name="hibernate.show_sql" value="false"/>
+    </properties>
+    </persistence-unit>
+</persistence>
